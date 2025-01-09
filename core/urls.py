@@ -1,10 +1,6 @@
 from django.urls import path
-from django.http import HttpResponse
-
-# Placeholder view for testing
-def placeholder_view(request):
-    return HttpResponse("Hello, world!")
+from .views import HelloWorld
 
 urlpatterns = [
-    path('', placeholder_view, name='placeholder'),
+    path('api/hello/', HelloWorld.as_view(), name='hello-world'),
 ]
