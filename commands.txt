@@ -1,0 +1,28 @@
+docker build -t my-node-app .
+docker run -p 3000:3000 my-node-app
+docker-compose down --remove-orphans
+docker container prune -f
+docker network prune -f
+docker volume prune -f
+
+docker-compose build --no-cache
+docker-compose up
+sudo journalctl -u docker
+docker ps -a
+docker logs <container_id>
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+docker ps
+
+
+
+cd my-react-frontend
+
+nano package.json
+
+npm install
+
+sudo journalctl -u docker
